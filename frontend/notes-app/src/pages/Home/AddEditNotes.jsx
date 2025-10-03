@@ -25,6 +25,7 @@ const AddEditNotes = ({noteData, type, getAllNotes, onClose}) => {
   }
 
   const editNote =async () => {
+    console.log(noteData);
     const noteId = noteData._id;
     try {
       const response = await axiosInstance.put(`/edit-note/${noteId}`, {
@@ -50,6 +51,7 @@ const AddEditNotes = ({noteData, type, getAllNotes, onClose}) => {
       addNewNote();
     }
     else {
+      console.log(noteData);
       editNote();
     }
   }
